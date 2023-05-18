@@ -1,0 +1,153 @@
+Polymorphsim
+==========		
+	Poly			--> multiple
+	morphism		--> behaviours
+
+Polymorphsim is the ability of an object exibiting different behaviours 
+for the same operation based on the situation.
+
+The process of providing multiple implemations to 
+same method to perform same operation 
+based on the sub type or based on parameter type
+
+We can develop polymorphism in two ways
+	1) By using method overriding (Super class to Sub class)
+	2) By using method overloading (either in super class or in sub class or in both classes)
+
+For example:
+	class Person {
+		void eat(){ }					//Overoading polymorphism
+		void eat(Fruits f){ }	
+		void eat(FastFood f){ }	
+		void eat(Vegetables f){ }	
+		void eat(Tiffines f){ }	
+		void eat(DryFruits f){ }	
+	}	
+
+//====================================
+	class Person {
+		void eat(){ System.out.println("Veg"); }
+	}
+
+	class Student extends Person{
+		void eat(){ System.out.println("NV");  }			//overriding polymorphism
+	}	
+
+If we do not develop polymorphism what is the problem and who will face problem?
+	- user class program will face problem,
+	- user class becomes tight coupling and static binding progrgram
+	- means we must defined separate method for each sub type
+	- and call that sub type method separately
+	
+	- let us say we dont have overriding polymorphsim --> Ex C langauge
+	- we must develop project like below
+
+		class Person {							class Party{					class Party{                         
+			void eat(){ }							void eat1(Person p){			void eat(Person p){   
+		}											p.eat();						if(p instanceof Student) {                 
+												}									Student s = (Student)p;			
+		class Student extends Person{				void eat2(Student s){   					s.swallow();	
+			void swallow(){ }							s.swallow();                 			}else if(p instnaceof Faculty) {
+		}										}                                   					Faculty f = (Faculty)p;
+												void eat3(Faculty f){   					f.drink();
+		class Faculty extends Person{					f.drink();                 				}else if(p instanceof Person){
+			void drink(){ }						}                                   					p.eat();
+		}									}							                 }                            
+																			     }
+																		    }	     
+If polymorphism is not supported:
+	- If we do not have polymorphism, means if we are not allowed to define 
+	   multiple methods with same name to perform same operation with diff implimentations
+	   user class development becomes very tough and no easy to maintain its code.
+
+	- We must modify its code every time when we work with new sub class 
+	- Hence user class is become Tight Coupling and static binding.
+
+If polymorphism is supported:
+	- if polymorphim is supported, in both super class and sub class we will define
+	methods with the same name and 
+	- in user class we will invoke this method one time by using super class reference.
+	- then this method wiht one time invocation, it is automatically executed from 
+		diff sub classes based on the object is passed.
+	- becasue of overriding wise polymorphism, user class becomes Loose coupling and  Dynamic Binding
+	- it means when we want to work with new sub class, we no need to modify user class code
+	- just we need change current argument to this new sub class object in calling method.
+
+	for example with polymorphism: 	
+		class Person {							class Party{					
+			void eat(){ }							void eat(Person p){		
+		}											p.eat();				            
+												}									
+		class Student extends Person{			}	
+			void eat(){ }							
+		}									class Test {	
+												 public static void main(String[] args) {
+		class Faculty extends Person{					Party p1 = new Party();
+			void eat(){ }								//p1.eat( new Person() );
+		}											//p1.eat(new Student());
+													p1.eat(new Faculty());	
+												}
+											}
+
+//Develop Inheritance, Encapsulation, Polymorphism with ATM and BankAccount objects 											
+
+	//Implemented above project without Inheritance and Polymorphism 
+	//Address the problems
+
+		class HDFCBankAccount {				class HDFCATM {
+			void hdfcDeposit(){ }					void withdraw(HDFCBankAccount acc) {
+			void hdfcWithdraw(){ }						acc.hdfcWithdraw(5000);
+		}										}		
+											}
+
+		class ICICIBankAccount {				class ICICIATM {                                                
+			void iciciDeposit(){ }					void withdraw(ICICIBankAccount acc) {   
+			void iciciWithdraw(){ }						acc.iciciWithdraw(5000);                     
+		}										}		                                                       
+											}                                                                             
+											                                                                               
+		class SBIBankAccount {					class SBIATM {                                                
+			void sbiDeposit(){ }					void withdraw(SBIBankAccount acc) {   
+			void sbiWithdraw(){ }						acc.sbiWithdraw(5000);                     
+		}										}		                                                       
+											}
+											
+
+	//Implemented above project with Inheritance and  Polymorphism 
+	//Address the advatanges
+		
+		class BankAccount{									class ATM {
+			void deposit(){ }										void withdraw(BankAccount acc) {
+			void withdraw(){ }											acc.withdraw(5000);
+		}														}	
+															}
+		class HDFCBankAccount extends BankAccount{				
+			void deposit(){ }									class Customer {
+			void withdraw(){ }										public static void main(String[] args) {
+		}															ATM atm = new ATM();	
+																	//atm.withdraw(new HDFCBankAccount());
+		class ICICIBankAccount extends BankAccount{						//atm.withdraw(new ICICBankAccount());
+			void deposit(){ }											atm.withdraw(new SBIBankAccount());
+			void withdraw(){ }										}	
+		}													}
+											
+		class SBIBankAccount extends BankAccount{					
+			void deposit(){ }				
+			void withdraw(){ }				
+		}									
+											
+//Develop Inheritance, Encapsulation, Polymorphism with Mobile and SIM objects 											
+
+	//Implemented above project without Inheritance and Polymorphism 
+	//Address the problems
+											
+
+
+	//Implemented above project without Inheritance and Polymorphism 
+	//Address the problems
+
+
+
+
+
+
