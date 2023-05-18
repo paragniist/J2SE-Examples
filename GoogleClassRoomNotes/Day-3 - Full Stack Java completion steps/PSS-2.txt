@@ -1,0 +1,6 @@
+//find 20% of given number
+price = 1000;
+percOfDiscount = 20;
+disc = (num * percOfDisc)/100;
+finalPrice = price - disc; 
+print finalPrice

@@ -1,0 +1,38 @@
+Step #1: Open notepad
+
+Step #2: Type below print statement
+				print("Welcome to HKProgrammingWorld!")
+
+Step #3: Save above program with the name Example.py
+         in the folder D:\01CJ\01JB
+
+Step #4: Open cmd prompt 
+
+Step #5: Change path to D:\01CJ\JB
+				
+Step #6: Directly run python program as shown below
+
+				D:\01CJ\01JB>python Example.py
+				Welcome to HKProgrammingWorld!
+
+				D:\01CJ\01JB>py Example.py
+				Welcome to HKProgrammingWorld!
+
+				D:\01CJ\01JB>Example.py
+				Welcome to HKProgrammingWorld!
+
+Note: We no need to compile python program 
+because it is scripting style programming lagauge
+
+In scripting sytle we no need to write 
+class and main method. We can place logic 
+directly in the file.
+
+In Python we can also write program 
+	- in procedure programming style like in C language
+	- in object-oriented style like in Java
+
+In above two approaches, like in C and in Java 
+in python main method is not automatically executed 
+by PVM, we must call it explicity. We will learn it
+in next chapters.

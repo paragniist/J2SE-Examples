@@ -1,0 +1,79 @@
+1. Softwares Required to Develop a Java Program
+    We need 3 softwares to develop, compile and execute a Java program
+	1. Editor software	-> For developing a Java program means to Type and Save a Java program
+			1. Basic Editor								-> Notepad
+			2. Advanced Editor							-> Notepad++, Textpad, Editplus, Brackets
+			3. Integrated Development Environment (IDE)	-> Eclipse, STS, Intellij
+		
+		First learning programs development
+			On Notepad -> Editplus -> Eclipse
+		Note: Eclipse is not meant for learning, it is meant for developing project
+	
+	2. JDK			-> For obtaining [Compiler, JVM and API] for developing, compile and execute a program
+	
+	3. Command prompt -> For running Compiler and JVM softwares for compiling and executing Java program
+	
+	- We have all three softwares Notepad, JDK and CMD prompt in our system.
+	- Also we have set path to JDK software to access its binary files javac and java from our project directory
+	- Now can develop programs and projects
+2. Essential statements to develop a Java program
+    - We have three essential statements in a java program development
+	1. class
+	2. main method
+	3. System.out.println()
+	
+    - class is essential because Java is an OOP langauge. So in Java every program must be started with a class.
+
+    - main method is essential because every Java program execution is started with main method. 
+      The main method is the initial point of a class execution. From a class JVM executes only main method, 
+      hence in a class we must define main method for execution. Just for compilation, main method is not required.
+
+    - System.out.println() is essential because In Java, we can display any message or value (output or result)
+	on console to end-user by using the print statement System.out.println(-);
+3. Steps to develop a Java program
+	1. Open notepad [Press start key -> type notepad -> press enter key]
+	2. Type Java program
+	3. Save this program with .java extension in project directory
+	4. Open cmd prompt [Press start key -> type cmd -> press enter key]
+	5. Change path to project directory
+	6. Compile java file by using javac tool as	[ javac <filename>.java	]
+	7. Execute class by using java tool as		[ java <classname>		]
+4. Hello,World! Program development
+	Step: 1. Open Notepad
+	
+	Step #2: Type below program
+
+			class FirstProgram {
+			        public static void main(String[] args) {
+				        System.out.println("Welcome to HKProgrammingWorld!");
+                                }
+                        }
+
+	Step #3: Save above program with name Example.java
+		      in the folder D:\01CJ\01JB 
+		      [this folder is not available in your system, you must create it]
+
+	Step #4: Open cmd prompt
+			C:\Users\HK>
+
+			C:\Users\HK>javac Example.java
+						error: file not found: Example.java	
+
+	Step #5: Change path to project directory D:\01CJ\01JB
+			C:\Users\HK>D:       (changing drive )
+			D:\>
+			
+			D:\>cd 01CJ\01JB   (changing directory path) 
+			D:\01CJ\01JB>
+
+	Step #6: Compile Example.java file by using javac tool
+			D:\01CJ\01JB>javac Example.java	
+							|-> FirstProgram.class
+
+	Step #7: Execute FirstProgram.class by using java tool
+			D:\01CJ\01JB>java FirstProgram   [donot give .class extension, JVM automatically takes it]
+							|-> Welcome to HKProgrammingWorld!
+5. Compilation and Execution procedure
+	
+6. Closer look at Hello,World program
+7. Compiler and JVM Activates

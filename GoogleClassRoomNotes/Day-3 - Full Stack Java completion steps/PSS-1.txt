@@ -1,0 +1,8 @@
+﻿P  S  S
+==============
+num = 10;
+rem = num % 2;
+rem == 0 
+   num is even
+else 
+   num is odd

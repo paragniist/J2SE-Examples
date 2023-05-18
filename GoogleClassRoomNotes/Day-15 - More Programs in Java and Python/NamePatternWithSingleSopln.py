@@ -1,0 +1,1 @@
+print("H\n\tA\n\t\tR\n\t\t\tI")

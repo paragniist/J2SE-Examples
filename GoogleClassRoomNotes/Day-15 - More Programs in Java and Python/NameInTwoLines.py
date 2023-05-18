@@ -1,0 +1,1 @@
+print("Hari\nKrish\nna");
